@@ -1,4 +1,6 @@
 import {Container} from 'react-bootstrap';
+import AddSong from '../AddSong/AddSong';
+import RemoveSong from '../RemoveSong/RemoveSong';
 
 const SearchBar = (props) => {
     return (
@@ -14,6 +16,8 @@ const SearchBar = (props) => {
                     name="s" 
                 />
                 <button type="submit">Search</button>
+                <AddSong />
+                <RemoveSong />
             </form>
         </Container>
       );
