@@ -2,7 +2,7 @@ import {Container} from 'react-bootstrap';
 
 const SearchBar = (props) => {
     return (
-        <Container>
+        <Container className='searchBar'>
             <form action="/" method="get">
                 <label htmlFor="header-search">
                     <span className="visually-hidden">Search for songs, artists, etc ...</span>

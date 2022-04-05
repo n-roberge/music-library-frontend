@@ -17,6 +17,37 @@ code {
   background-color: #028090 !important;
 }
 
-.navbar-brand{
+.navbar-brand {
   color: #F0F3BD !important;
+}
+
+.searchBar {
+  background-color: #028090;
+  margin-top: 2em;
+  padding: 1em;
+  width: 80%;
+}
+
+#header-search{
+  margin-left: 2em;
+  margin-right: 1em;
+  width: 60%;
+}
+
+.button {
+  background-color: #F0F3BD !important;
+  color: black;
+}
+
+.songList {
+  margin-top: 3em;
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.songCells {
+  background-color: #1f1f1f !important;
+  border: none;
+  color: #F0F3BD;
+
 }
