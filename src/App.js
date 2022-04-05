@@ -5,8 +5,8 @@ import SongTable from "./Components/SongTable/SongTable";
 function App() {
   return (
     <div>
-      <SearchBar />
       <NavBar />
+      <SearchBar />
       <SongTable />
     </div>
   );
