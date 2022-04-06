@@ -22,9 +22,6 @@ function AddSong(props){
                     {/* <AddSongForm addNewEntryProperty = {addNewEntry} /> */}
                     <AddSongForm  />
                 </Modal.Body>
-                    <Button variant="primary" onClick={handleClose}>
-                        Close
-                    </Button>
             </Modal>
         </div>
     )
