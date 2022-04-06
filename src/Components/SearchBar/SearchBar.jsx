@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {Container, Button} from 'react-bootstrap';
 import AddSong from '../AddSong/AddSong';
 import RemoveSong from '../RemoveSong/RemoveSong';
-import { makeGetRequestFunction } from '../SongTable/SongTable';
 import SongTable from '../SongTable/SongTable';
 
 const songs = [];

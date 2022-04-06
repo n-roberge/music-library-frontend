@@ -4,7 +4,7 @@ import {Table, Container} from 'react-bootstrap';
 const SongTable = (props) => {
     return (
         <Container className="songList">
-            <Table striped bordered hover variant = "dark" >
+            <Table striped bordered hover variant = "dark">
                 <thead>
                     <tr >
                         <th className="songCells">ID</th>
@@ -18,13 +18,9 @@ const SongTable = (props) => {
                 <tbody>
                     {props.parentSongs.map((item) =>{
                         return(
-                            <tr key = {item.id}>
-                                {Object.values(item).map((val) =>(
-                                    <td>{val}</td>
-                                ))}
-                            </tr>
-                        );
-                    })};
+                            <tr key = {item.id}>{Object.values(item).map((val)=>(<td>{val}</td>))}</tr>
+                        )
+                    })}
                 </tbody>
             </Table>
         </Container> 

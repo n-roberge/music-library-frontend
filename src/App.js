@@ -7,14 +7,14 @@ import SongTable from "./Components/SongTable/SongTable";
 const App = () => {  
 
   //TODO add songs to useState?
-  const [songs, setSongs] = useState([])
+  const [songs, setSongs] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   async function makeGetRequest(){
     try {
         let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music/');
         let music = response.data;
         setSongs(music);
-        console.log(songs);
     }
     catch (ex){
         console.log('Error in API ')
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <SearchBar />
+      <SearchBar searchValue = {searchValue} setSearchValue = {setSearchValue}/>
       <SongTable parentSongs = {songs}/>
     </div>
   );
