@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
  
 
 class AddSongForm extends Component{
@@ -22,7 +22,7 @@ class AddSongForm extends Component{
         event.preventDefault();
 
         //test
-        alert(`ID: ${this.state.id} title: ${this.state.title} album: ${this.state.album} artist: ${this.state.artist} genre: ${this.state.genre} release date: ${this.state.releaseDate}`);
+        alert(`TEST: \n\nID: ${this.state.id} \ntitle: ${this.state.title} \nalbum: ${this.state.album} \nartist: ${this.state.artist} \ngenre: ${this.state.genre} \nrelease date: ${this.state.releaseDate}`);
 
         // let newEntry = {
         //     id: id,
@@ -50,7 +50,7 @@ class AddSongForm extends Component{
                 <Form.Control type = "text" name = "genre" onChange={this.handleChange} value = {this.state.genre}/>
                 <Form.Label>Release Date: </Form.Label>
                 <Form.Control type = "date" name = "releaseDate" onChange={this.handleChange} value = {this.state.releaseDate}/>
-                <button type='submit' onClick={(event) => this.handleSubmit(event)}>Add Song</button>
+                <Button type='submit' className = 'submitBtn' onClick={(event) => this.handleSubmit(event)}>Add Song</Button>
             </Form.Group>
         );
     };

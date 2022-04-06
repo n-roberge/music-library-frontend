@@ -1,6 +1,11 @@
+import { Button } from "react-bootstrap";
+
+
 const RemoveSong = (props) => {
     return (  
-        <button className="removeButton">Remove</button>
+        <span>
+            <Button className="removeButton">Remove</Button>
+        </span>
     );
 }
  

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import AddSongForm from "../AddSongForm/AddSongForm";
 
 function AddSong(props){
@@ -9,7 +9,7 @@ function AddSong(props){
     const handleShow = () => setShow(true);
 
     return (
-        <div>
+        <span>
             <Button variant="primary" onClick={handleShow} className="addButton">
                 Add
             </Button>
@@ -23,7 +23,7 @@ function AddSong(props){
                     <AddSongForm  />
                 </Modal.Body>
             </Modal>
-        </div>
+        </span>
     )
     
 }

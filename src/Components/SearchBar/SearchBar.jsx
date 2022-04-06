@@ -1,4 +1,4 @@
-import {Container} from 'react-bootstrap';
+import {Container, Button} from 'react-bootstrap';
 import AddSong from '../AddSong/AddSong';
 import RemoveSong from '../RemoveSong/RemoveSong';
 import { makeGetRequestFunction } from '../SongTable/SongTable';
@@ -7,7 +7,7 @@ const products = makeGetRequestFunction();
 
 const SearchBar = (props) => {
     return (
-        <Container className='searchBar'>
+        <Container className='searchBar text-center'>
             <form action="/" method="get">
                 <label htmlFor="header-search">
                     <span className="visually-hidden">Search for songs, artists, etc ...</span>
@@ -18,9 +18,11 @@ const SearchBar = (props) => {
                     placeholder="Search for songs, artists, etc ..."
                     name="s" 
                 />
-                <button type="submit">Search</button>
-                <AddSong />
-                <RemoveSong />
+                <Container className='buttonBar text-center'>
+                    {/* <Button type="submit" className='searchButton'>Search</Button> */}
+                    <AddSong />
+                    <RemoveSong />
+                </Container>
             </form>
         </Container>
       );

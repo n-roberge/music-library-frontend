@@ -15,6 +15,10 @@ code {
 
 .navbar {
   background-color: #028090 !important;
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+  margin-bottom: 3em;
 }
 
 .navbar-brand {
@@ -23,7 +27,7 @@ code {
 
 .searchBar {
   background-color: #028090;
-  margin-top: 2em;
+  margin-top: 6em;
   padding: 1em;
   width: 80%;
 }
@@ -39,14 +43,20 @@ code {
 }
 
 #header-search{
-  margin-left: 2em;
-  margin-right: 1em;
-  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
-.button {
+.searchButton {
   background-color: #F0F3BD !important;
   color: black;
+  border: none;
+}
+
+.searchButton:hover {
+  scale: 1.1 !important;
+  background-color: #C64191 !important;
 }
 
 .songList {
@@ -59,19 +69,66 @@ code {
   background-color: #1f1f1f !important;
   border: none;
   color: #F0F3BD;
+}
 
+.buttonBar {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .addButton {
   background-color: #F0F3BD;
   color: black;
   border: none;
+  display: inline;
   margin-left: 1em;
   margin-right: .5em;
+  width: 6em;
+}
+
+.addButton:hover {
+  scale: 1.1;
+  background-color: #C64191;
 }
 
 .removeButton {
   background-color: #F0F3BD;
   color: black;
-  border: none
+  border: none;
+  width: 6em;
+}
+
+.removeButton:hover {
+  scale: 1.1;
+  background-color: #C64191;
+}
+
+.btn-close {
+  background-color: #C64191;
+}
+
+.modal-header {
+  background-color: #1f1f1f;
+  color: #C64191;
+}
+
+.modal-body {
+  background-color: #2D2D2D;
+  color: #F0F3BD;
+}
+
+.form-control {
+  background-color: #cacaca;
+}
+
+.submitBtn {
+  margin-top: 1em;
+  background-color: #C64191;
+  border: none;
+}
+
+.submitBtn:hover {
+  scale: 1.1;
+  background-color:#028090;
 }
