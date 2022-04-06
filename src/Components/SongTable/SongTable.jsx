@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Table, Container} from 'react-bootstrap';
 
-export default class MusicList extends React.Component {
+export default class SongTable extends React.Component {
   state = {music: []};
 
   componentDidMount() {
@@ -48,3 +48,5 @@ export default class MusicList extends React.Component {
         );   
     }
 };
+
+export const makeGetRequestFunction = SongTable.prototype.makeGetRequest;

@@ -1,36 +1,34 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
+import AddSongForm from "../AddSongForm/AddSongForm";
 
-function AddSong() {
+function AddSong(props){
+ 
+    const [showModal, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-  const [showModal, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-
-  return (
-    <>
-        
-        <Button variant="primary" onClick={handleShow} className="addButton">
-            Add
-        </Button>
-        
-        <Modal show={showModal} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Add Song</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Test space for future form</Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Add Song
-                </Button>
-            </Modal.Footer>
-        </Modal>
-    </>
-  );
+    return (
+        <div>
+            <Button variant="primary" onClick={handleShow} className="addButton">
+                Add
+            </Button>
+            <Modal show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add Song</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {/* update here to put new song to db */}
+                    {/* <AddSongForm addNewEntryProperty = {addNewEntry} /> */}
+                    <AddSongForm  />
+                </Modal.Body>
+                    <Button variant="primary" onClick={handleClose}>
+                        Close
+                    </Button>
+            </Modal>
+        </div>
+    )
+    
 }
 
 export default AddSong;

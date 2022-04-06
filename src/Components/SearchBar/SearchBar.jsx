@@ -1,6 +1,9 @@
 import {Container} from 'react-bootstrap';
 import AddSong from '../AddSong/AddSong';
 import RemoveSong from '../RemoveSong/RemoveSong';
+import { makeGetRequestFunction } from '../SongTable/SongTable';
+
+const products = makeGetRequestFunction();
 
 const SearchBar = (props) => {
     return (
