@@ -18,14 +18,11 @@ function AddSong(props){
                     <Modal.Title>Add Song</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* update here to put new song to db */}
-                    {/* <AddSongForm addNewEntryProperty = {addNewEntry} /> */}
                     <AddSongForm  />
                 </Modal.Body>
             </Modal>
         </span>
     )
-    
 }
 
 export default AddSong;

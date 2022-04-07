@@ -6,13 +6,12 @@ import SongTable from "./Components/SongTable/SongTable";
 
 const App = () => {  
 
-  //TODO add songs to useState?
   const [songs, setSongs] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
   async function makeGetRequest(){
     try {
-        let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music/');
+        let response = await axios.get('http://localhost:5005/api/songs');
         let music = response.data;
         setSongs(music);
     }
