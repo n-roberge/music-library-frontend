@@ -78,6 +78,10 @@ code {
   margin-right: auto;
 }
 
+.addRemoveBar {
+  margin-top: 1em;
+}
+
 .addButton {
   background-color: #F0F3BD;
   color: black;

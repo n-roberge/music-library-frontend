@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {Container, Button} from 'react-bootstrap';
-import AddSong from '../AddSong/AddSong';
-import RemoveSong from '../RemoveSong/RemoveSong';
 
 const songs = [];
 
@@ -21,8 +19,8 @@ const SearchBar = (props) => {
 
     return (
         <Container className='searchBar text-center'>
-            <form action="/" method="get">
-                <label htmlFor="search">
+            <form>
+                <label>
                     <span className="visually-hidden">Search for songs, artists, etc ...</span>
                 </label>
                 <input
@@ -31,11 +29,6 @@ const SearchBar = (props) => {
                     placeholder="Search for songs, artists, etc ..."
                     onChange={handleSearch}
                 />
-                <Container className='buttonBar text-center'>
-                    {/* <Button type="submit" className='searchButton'>Search</Button> */}
-                    <AddSong />
-                    <RemoveSong />
-                </Container>
             </form>
         </Container>
       );

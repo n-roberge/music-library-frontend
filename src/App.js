@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import NavBar from "./Components/NavBar/NavBar";
 import axios from 'axios';
 import SearchBar from "./Components/SearchBar/SearchBar";
+import AddSong from './Components/AddSong/AddSong';
+import RemoveSong from './Components/RemoveSong/RemoveSong';
 import SongTable from "./Components/SongTable/SongTable";
 
 const App = () => {  
@@ -22,13 +24,22 @@ const App = () => {
 
   useEffect(() =>{
     makeGetRequest();
-  }, []);
+  }, [songs]);
   
 
   return (
     <div>
       <NavBar />
-      <SearchBar searchValue = {searchValue} setSearchValue = {setSearchValue}/>
+      <div className='searchAndButtons'>
+        <SearchBar 
+          parentSongs = {songs}
+          parentSetSongs = {setSongs}
+        />
+        <div className='addRemoveBar text-center'>
+          <AddSong />
+          <RemoveSong />
+        </div>
+      </div>
       <SongTable parentSongs = {songs}/>
     </div>
   );
