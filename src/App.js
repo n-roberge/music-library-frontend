@@ -18,7 +18,7 @@ const App = () => {
         setSongs(music);
     }
     catch (ex){
-        console.log('Error in API ')
+        console.log(ex)
     }
   };
 

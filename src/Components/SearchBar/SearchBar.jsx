@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import {Container, Button} from 'react-bootstrap';
-
-const songs = [];
+import {Container} from 'react-bootstrap';
 
 const SearchBar = (props) => {
+    const [songs, setSongs] = useState()
+    const [search, setSearch] = useState('');
+    // const searchedData = songs.filter (x => x.name === search);
 
-    const [search, setSearch] = React.useState('');
 
     const handleSearch = (event) => {
         setSearch(event.target.value);
+    //     setSongs(searchedData)
+    //     console.log(search)
     };
 
-    const data = {
-        songs: songs.filter((item)=>
-            item.name.toLowerCase().includes(search.toLocaleLowerCase)
-        ),
-    };
 
     return (
+        <>
         <Container className='searchBar text-center'>
             <form>
                 <label>
@@ -31,7 +29,8 @@ const SearchBar = (props) => {
                 />
             </form>
         </Container>
-      );
+        </>
+    );    
 }
  
 export default SearchBar;
