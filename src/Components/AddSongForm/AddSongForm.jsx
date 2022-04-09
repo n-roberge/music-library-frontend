@@ -9,7 +9,8 @@ class AddSongForm extends Component{
         album: '',
         artist: '',
         genre: '',
-        releaseDate: ''
+        releaseDate: '',
+        message: ''
     }
 
     handleChange = (event) => {
@@ -19,11 +20,15 @@ class AddSongForm extends Component{
     };
 
     handleClear = () => {
-        this.state.title = ""
-        this.state.album = ""
-        this.state.artist = ""
-        this.state.genre = ""
-        this.state.releaseDate = ""
+        this.setState({
+            id: '',
+            title: '',
+            album: '',
+            artist: '',
+            genre: '',
+            releaseDate: '',
+            message: ''
+        })
     }
 
     handleSubmit = (event) => {
@@ -40,17 +45,25 @@ class AddSongForm extends Component{
                 }
             )
             .then(res => {
+                this.setState({
+                    message: `${this.state.title} by ${this.state.artist} has been added`
+                });
+
                 console.log(res);
                 console.log(res.data);
-                this.state.title = ""
-                this.state.album = ""
-                this.state.artist = ""
-                this.state.genre = ""
-                this.state.releaseDate = ""
+                this.setState({
+                    id: '',
+                    title: '',
+                    album: '',
+                    artist: '',
+                    genre: '',
+                    releaseDate: '',
+                })
             })
         }
         catch (ex) {
             console.log(ex)
+            this.setState({message: 'Error adding song'})
         }
     }
 
@@ -92,6 +105,7 @@ class AddSongForm extends Component{
                         name = "releaseDate" 
                         onChange={this.handleChange} 
                         value = {this.state.releaseDate}/>
+                    <p>{this.state.message}</p>
                     <div className='formButtonRow'>
                         <Button type='submit' className = 'formBtn'>Add Song</Button>
                         <Button className='formBtn' onClick={this.handleClear}>Clear Form</Button>
