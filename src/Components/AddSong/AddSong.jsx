@@ -13,7 +13,7 @@ function AddSong(props){
             <Button variant="primary" onClick={handleShow} className="addButton">
                 Add
             </Button>
-            <Modal show={showModal} onHide={handleClose}>
+            <Modal show={showModal} onHide={handleClose} id = "addModal">
                 <Modal.Header closeButton>
                     <Modal.Title>Add Song</Modal.Title>
                 </Modal.Header>

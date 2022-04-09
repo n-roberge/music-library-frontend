@@ -38,7 +38,7 @@ class RemoveSongForm extends Component{
                         name = "id" 
                         onChange={this.handleChange} 
                         value = {this.state.id}/>
-                    <Button type='submit' className = 'submitBtn'>Remove Song</Button>
+                    <Button type='submit' className = 'formBtn'>Remove Song</Button>
                 </Form.Group>
             </form>
         );

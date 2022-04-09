@@ -127,13 +127,13 @@ code {
   background-color: #cacaca;
 }
 
-.submitBtn {
-  margin-top: 1em;
+.formBtn {
+  margin: 1em;
   background-color: #C64191;
   border: none;
 }
 
-.submitBtn:hover {
+.formBtn:hover {
   scale: 1.1;
   background-color:#028090;
 }

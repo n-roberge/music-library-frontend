@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Form, Button} from 'react-bootstrap';
  
-
 class AddSongForm extends Component{
     state = {
         id: '',
@@ -14,32 +13,18 @@ class AddSongForm extends Component{
     }
 
     handleChange = (event) => {
-        let errors = this.state.errors;
-
-        // switch(event.target.name){
-        //     case 'title':
-        //         errors.title = event.target.value.length === 0 ? "Must enter a title" : null;
-        //         break;
-        //     case 'album':
-        //         errors.album = event.target.value.length === 0 ? "Must enter an album name" : null;
-        //         break;
-        //     case 'artist':
-        //         errors.artist = event.target.value.length === 0 ? "Must enter an artist name" : null;
-        //         break;
-        //     case 'genre':
-        //         errors.genre = event.target.value.length === 0 ? "Must enter a genre" : null;
-        //         break;
-        //     case 'releaseDate':
-        //         errors.releaseDate = event.target.value.length === 0 ? "Must enter a release date" : null;
-        //         break;
-        //     default:
-        //         break;
-        // }
-
         this.setState({
             [event.target.name]: event.target.value
         })
     };
+
+    handleClear = () => {
+        this.state.title = ""
+        this.state.album = ""
+        this.state.artist = ""
+        this.state.genre = ""
+        this.state.releaseDate = ""
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -57,6 +42,11 @@ class AddSongForm extends Component{
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                this.state.title = ""
+                this.state.album = ""
+                this.state.artist = ""
+                this.state.genre = ""
+                this.state.releaseDate = ""
             })
         }
         catch (ex) {
@@ -97,13 +87,15 @@ class AddSongForm extends Component{
                         value = {this.state.genre}/>
                     <Form.Label>Release Date: </Form.Label>
                     <Form.Control 
-                        //TODO check to see if the type can be date, but change format to MM/DD/YYYY
                         type = "text"
                         placeholder='MM/DD/YYYY' 
                         name = "releaseDate" 
                         onChange={this.handleChange} 
                         value = {this.state.releaseDate}/>
-                    <Button type='submit' className = 'submitBtn'>Add Song</Button>
+                    <div className='formButtonRow'>
+                        <Button type='submit' className = 'formBtn'>Add Song</Button>
+                        <Button className='formBtn' onClick={this.handleClear}>Clear Form</Button>
+                    </div>
                 </Form.Group>
             </form>
         );
